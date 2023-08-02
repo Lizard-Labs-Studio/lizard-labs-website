@@ -1,0 +1,114 @@
+// Reset
+@import "./Reset.module.scss";
+
+// Constants
+@import "./Constants.module.scss";
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  background-color: $primary-color-5;
+  color: $primary-color-90;
+  overflow-x: hidden;
+  font-smooth: always;
+
+  &::after {
+    content: "";
+    width: 200vw;
+    height: 220vh;
+    background-image: url("/assets/grain.png");
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    z-index: 1000;
+    background-repeat: repeat;
+
+    pointer-events: none;
+    animation: grain 1.5s steps(6) infinite;
+    overflow: hidden;
+    opacity: 0.2;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+// containers
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container-global {
+  max-width: 2000px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.container-min {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+// fonts
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf");
+  sc: local("Inter Regular"), local("Inter-Regular"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.ttf");
+  sc: local("Inter Medium"), local("Inter-Medium"),
+    url("../fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.ttf");
+  sc: local("Roboto Bold"), local("Roboto-Bold"),
+    url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+// animations
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  30% {
+    transform: translate(-3%, -15%);
+  }
+  50% {
+    transform: translate(-12%, 9%);
+  }
+  70% {
+    transform: translate(-9%, 4%);
+  }
+  90% {
+    transform: translate(-1%, 7%);
+  }
+}
