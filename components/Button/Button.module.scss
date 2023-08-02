@@ -1,0 +1,47 @@
+@import "../../styles/Constants.module.scss";
+
+.button {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, #3f3f3e -4.84%, #82847b 113.08%)
+      padding-box,
+    linear-gradient(180deg, #999e9b -15.09%, #434444 109.43%) border-box;
+  border-radius: 10px;
+  padding: 0 36px;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imageHide {
+    display: none;
+  }
+
+  .buttonText {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: $primary-color-80;
+    margin: 0;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 30px rgba(152, 157, 154, 0.25);
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+  }
+}

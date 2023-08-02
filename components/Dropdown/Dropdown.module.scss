@@ -1,0 +1,66 @@
+@import "../../styles/Constants.module.scss";
+
+.dropdownBranch {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .question {
+      font-size: 18px;
+      font-weight: 500;
+      color: $primary-color-90;
+      margin: 0;
+    }
+
+    .arrow {
+      width: 24px;
+      height: 24px;
+      background-image: url("/icons/IconArrow.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+
+  .body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s all cubic-bezier(0, 1, 0, 1);
+    .answer {
+      font-size: 16px;
+      font-weight: 400;
+      color: $primary-color-5;
+      transition: 0.3s all ease-in-out;
+      transition-delay: 0.1s;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .bodyActive {
+    @extend .body;
+    height: auto;
+    max-height: 9999px;
+    overflow: hidden;
+    transition: 0.3s all cubic-bezier(1, 0, 1, 0);
+
+    .answer {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      font-weight: 400;
+      color: $primary-color-60;
+    }
+  }
+}

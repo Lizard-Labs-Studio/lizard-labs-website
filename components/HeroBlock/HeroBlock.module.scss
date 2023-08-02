@@ -1,0 +1,37 @@
+@import "../../styles/Constants.module.scss";
+
+.heroBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 100px 0 300px 0;
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .title {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-size: 80px;
+      line-height: 90%;
+      color: $primary-color-90;
+      white-space: nowrap;
+
+      .gradientText {
+        background: $text-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .subtitle {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      color: $primary-color-60;
+      font-weight: 400;
+    }
+  }
+}

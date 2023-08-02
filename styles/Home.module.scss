@@ -1,0 +1,11 @@
+.hero {
+  position: absolute;
+  width: 805px;
+  height: 805px;
+  background-image: url("/assets/Hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 50%;
+  transform: translate(-32%,-27%);
+}

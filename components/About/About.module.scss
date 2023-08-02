@@ -1,0 +1,88 @@
+@import "../../styles/Constants.module.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 0 0 200px 0;
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .title {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-size: 80px;
+      line-height: 90%;
+      color: $primary-color-90;
+      white-space: nowrap;
+
+      .gradientText {
+        background: $text-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .subtitle {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      color: $primary-color-60;
+      font-weight: 400;
+      max-width: 520px;
+      text-align: center;
+    }
+  }
+
+  .skills {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    .skillBlock {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .skillImage {
+        position: relative;
+        width: 100%;
+        background: #202020;
+        border-radius: 12px;
+      }
+
+      .skillImage:after {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+
+      .skillBody {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        .skillTitle {
+          font-size: 18px;
+          color: $primary-color-90;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        .skillDescription {
+          font-size: 16px;
+          color: $primary-color-60;
+          font-weight: 400;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
