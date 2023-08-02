@@ -65,10 +65,19 @@ a {
 
 @font-face {
   font-family: "Inter";
+  src: url("../fonts/Inter-Light.ttf");
+  sc: local("Inter Light"), local("Inter-Light"),
+    url("../fonts/Inter-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
   src: url("../fonts/Inter-Regular.ttf");
   sc: local("Inter Regular"), local("Inter-Regular"),
     url("../fonts/Inter-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -77,7 +86,7 @@ a {
   src: url("../fonts/Inter-Medium.ttf");
   sc: local("Inter Medium"), local("Inter-Medium"),
     url("../fonts/Inter-Medium.ttf") format("truetype");
-  font-weight: medium;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -86,7 +95,7 @@ a {
   src: url("../fonts/Roboto-Bold.ttf");
   sc: local("Roboto Bold"), local("Roboto-Bold"),
     url("../fonts/Roboto-Bold.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
