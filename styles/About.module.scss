@@ -1,0 +1,336 @@
+@import "./Constants.module.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+
+  .heroBlock {
+    margin: 100px 0 300px 0;
+
+    // &:first-child::after {
+    //   content: "";
+    //   position: absolute;
+    //   width: 100px;
+    //   height: 100px;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   background: red;
+    // }
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+
+    // .shadow {
+    //   position: absolute;
+    //   width: 30vw;
+    //   max-width: 380px;
+    //   height: 100px;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   background: $primary-color-5;
+    //   opacity: 0.4;
+    //   filter: blur(20px);
+    //   z-index: 1;
+    // }
+
+    .title {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-size: 80px;
+      line-height: 90%;
+      color: $primary-color-90;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+
+      .gradientText {
+        background: $text-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 68px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 48px;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 36px;
+      }
+    }
+
+    .subtitle {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      color: $primary-color-70;
+      font-weight: 400;
+      max-width: 520px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .strengthsBlock {
+    margin: 100px 0 200px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .strengthsListWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      .strengthsImage {
+        min-width: 300px;
+        height: 300px;
+        background: #202020;
+        border-radius: 12px;
+      }
+
+      .strengthsList {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .line {
+          width: 100%;
+          height: 0.5px;
+          background: $primary-color-20;
+        }
+      }
+      @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .teamBlock {
+    margin: 0 0 200px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+      // grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .cardImage {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          background: #202020;
+          border-radius: 12px;
+        }
+
+        .cardinfo {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          .cardName {
+            font-size: 18px;
+            color: $primary-color-90;
+            margin: 0;
+          }
+
+          .cardPosition {
+            font-size: 16px;
+            color: $primary-color-60;
+            margin: 0;
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        grid-row-gap: 30px;
+      }
+    }
+  }
+}
+
+.circeBg1 {
+  position: absolute;
+  top: 260px;
+  left: 50%;
+  transform: translateX(-200%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #60497b;
+  opacity: 18%;
+  filter: blur(100px);
+  z-index: 2;
+  animation: circle1 3.5s infinite;
+
+  @media (max-width: $breakpoint-mobile) {
+    top: 260px;
+    left: 50%;
+    transform: translateX(-90%);
+    animation: circle1Mob 3.5s infinite;
+  }
+}
+.circeBg2 {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-260%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: #d38cc5;
+  opacity: 18%;
+  filter: blur(150px);
+  z-index: 2;
+  animation: circle2 3.5s infinite;
+  animation-delay: 0.5s;
+
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 300px;
+    left: 50%;
+    transform: translateX(-100%);
+    animation: circle2Mob 3.5s infinite;
+    animation-delay: 0.5s;
+  }
+}
+
+.circeBg3 {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(180%, -50%);
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: #d38cc5;
+  opacity: 8%;
+  filter: blur(150px);
+  z-index: 2;
+  animation: circle3 3.5s infinite;
+  animation-delay: 1s;
+
+  @media (max-width: $breakpoint-mobile) {
+    transform: translate(100%, -50%);
+    width: 400px;
+    height: 400px;
+    animation: circle3Mob 3.5s infinite;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes circle1 {
+  0% {
+    transform: translateX(-200%) scale(1);
+    opacity: 18%;
+  }
+  50% {
+    transform: translateX(-200%) scale(1.4);
+    opacity: 28%;
+  }
+  100% {
+    transform: translateX(-200%) scale(1);
+    opacity: 18%;
+  }
+}
+
+@keyframes circle1Mob {
+  0% {
+    transform: translateX(-90%) scale(1);
+    opacity: 18%;
+  }
+  50% {
+    transform: translateX(-90%) scale(1.4);
+    opacity: 28%;
+  }
+  100% {
+    transform: translateX(-90%) scale(1);
+    opacity: 18%;
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    transform: translateX(-260%) scale(1);
+    opacity: 18%;
+  }
+  50% {
+    transform: translateX(-260%) scale(1.4);
+    opacity: 28%;
+  }
+  100% {
+    transform: translateX(-260%) scale(1);
+    opacity: 18%;
+  }
+}
+
+@keyframes circle2Mob {
+  0% {
+    transform: translateX(-100%) scale(1);
+    opacity: 18%;
+  }
+  50% {
+    transform: translateX(-100%) scale(1.4);
+    opacity: 28%;
+  }
+  100% {
+    transform: translateX(-100%) scale(1);
+    opacity: 18%;
+  }
+}
+
+@keyframes circle3 {
+  0% {
+    transform: translate(180%, -50%) scale(1);
+    opacity: 8%;
+  }
+  50% {
+    transform: translate(180%, -50%) scale(1.4);
+    opacity: 8%;
+  }
+  100% {
+    transform: translate(180%, -50%) scale(1);
+    opacity: 8%;
+  }
+}
+
+@keyframes circle3Mob {
+  0% {
+    transform: translate(100%, -50%) scale(1);
+    opacity: 8%;
+  }
+  50% {
+    transform: translate(100%, -50%) scale(1.4);
+    opacity: 8%;
+  }
+  100% {
+    transform: translate(100%, -50%) scale(1);
+    opacity: 8%;
+  }
+}

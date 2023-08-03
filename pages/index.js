@@ -10,46 +10,52 @@ import FAQ from "../components/FAQ/FAQ";
 
 export default function Home() {
   return (
-    <div className="container-global">
-      <Head>
-        <title>Lizard Labs</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="container-max">
+      <div className={styles.circeBg1} />
+      <div className={styles.circeBg2} />
+      <div className={styles.circeBg3} />
 
-      <HeroBlock />
+      <div className="container-global">
+        <Head>
+          <title>Lizard Labs</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <About />
+        <HeroBlock />
 
-      <Reptarium />
+        <About />
 
-      <FAQ />
+        <Reptarium />
 
-      <div className={styles.hero} />
-      <div className={styles.hero2} />
+        <FAQ />
 
-      <div className={styles.bgAnim}>
-        {/* <div className={styles.shadow}></div> */}
-        <div className={styles.saturnWrapper}>
-          <div className={styles.circle}></div>
-          <div className={styles.dot}>
-            <p>React.js & Next.js</p>
+        <div className={styles.hero} />
+        <div className={styles.hero2} />
+
+        <div className={styles.bgAnim}>
+          {/* <div className={styles.shadow}></div> */}
+          <div className={styles.saturnWrapper}>
+            <div className={styles.circle}></div>
+            <div className={styles.dot}>
+              <p>React.js & Next.js</p>
+            </div>
           </div>
-        </div>
 
-        <div className={styles.saturnWrapper}>
-          <div className={styles.circle}></div>
-          <div className={styles.dot}>
-            <p>UX/UI</p>
+          <div className={styles.saturnWrapper}>
+            <div className={styles.circle}></div>
+            <div className={styles.dot}>
+              <p>UX/UI</p>
+            </div>
           </div>
-        </div>
 
-        <div className={styles.saturnWrapper}>
-          <div className={styles.circle}></div>
-          <div className={styles.dot}>
-            <p>Express.js</p>
+          <div className={styles.saturnWrapper}>
+            <div className={styles.circle}></div>
+            <div className={styles.dot}>
+              <p>Express.js</p>
+            </div>
           </div>
+          <div className={styles.saturn}></div>
         </div>
-        <div className={styles.saturn}></div>
       </div>
     </div>
   );
