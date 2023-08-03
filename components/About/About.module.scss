@@ -6,6 +6,8 @@
   align-items: center;
   gap: 40px;
   margin: 0 0 200px 0;
+  position: relative;
+  z-index: 3;
 
   .titles {
     display: flex;

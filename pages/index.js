@@ -25,8 +25,32 @@ export default function Home() {
       <FAQ />
 
       <div className={styles.hero} />
-      
+      <div className={styles.hero2} />
+
+      <div className={styles.bgAnim}>
+        {/* <div className={styles.shadow}></div> */}
+        <div className={styles.saturnWrapper}>
+          <div className={styles.circle}></div>
+          <div className={styles.dot}>
+            <p>React.js & Next.js</p>
+          </div>
+        </div>
+
+        <div className={styles.saturnWrapper}>
+          <div className={styles.circle}></div>
+          <div className={styles.dot}>
+            <p>UX/UI</p>
+          </div>
+        </div>
+
+        <div className={styles.saturnWrapper}>
+          <div className={styles.circle}></div>
+          <div className={styles.dot}>
+            <p>Express.js</p>
+          </div>
+        </div>
+        <div className={styles.saturn}></div>
+      </div>
     </div>
   );
 }
-
