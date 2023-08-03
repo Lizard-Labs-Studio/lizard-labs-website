@@ -26,6 +26,18 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 68px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 48px;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 36px;
+      }
     }
 
     .subtitle {
@@ -36,52 +48,122 @@
       font-weight: 400;
       max-width: 520px;
       text-align: center;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 14px;
+      }
     }
   }
 
-  .skills {
+  .skillsWrapper {
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
 
-    .skillBlock {
+    .skills {
       width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      position: relative;
+      padding: 0 0 20px 0;
 
-      .skillImage {
-        position: relative;
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        height: 6px;
+        background: $primary-color-10;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $primary-color-20;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #4a5158;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .skillBlock {
         width: 100%;
-        background: #202020;
-        border-radius: 12px;
-      }
-
-      .skillImage:after {
-        content: "";
-        display: block;
-        padding-top: 100%;
-      }
-
-      .skillBody {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 20px;
+        min-width: 160px;
+        scroll-snap-align: start;
 
-        .skillTitle {
-          font-size: 18px;
-          color: $primary-color-90;
-          font-weight: 400;
-          margin: 0;
+        .skillImage {
+          position: relative;
+          width: 100%;
+          background: #202020;
+          border-radius: 12px;
         }
 
-        .skillDescription {
-          font-size: 16px;
-          color: $primary-color-60;
-          font-weight: 400;
-          margin: 0;
+        .skillImage:after {
+          content: "";
+          display: block;
+          padding-top: 100%;
         }
+
+        .skillBody {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          .skillTitle {
+            font-size: 18px;
+            color: $primary-color-90;
+            font-weight: 400;
+            margin: 0;
+
+            @media (max-width: $breakpoint-mobile) {
+              font-size: 16px;
+            }
+          }
+
+          .skillDescription {
+            font-size: 16px;
+            color: $primary-color-60;
+            font-weight: 400;
+            margin: 0;
+
+            @media (max-width: $breakpoint-mobile) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        gap: 20px;
+      }
+    }
+
+    &::after {
+      content: "";
+      top: 0;
+      right: -1px;
+      position: absolute;
+      height: calc(100% - 20px);
+      width: 80px;
+      background: linear-gradient(
+        90deg,
+        rgba(12, 12, 13, 0) 0%,
+        rgba(12, 12, 13, 60) 100%
+      );
+      pointer-events: none;
+      display: none;
+
+      @media (max-width: $breakpoint-tablet) {
+        display: inherit;
       }
     }
   }

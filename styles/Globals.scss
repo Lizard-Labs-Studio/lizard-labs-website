@@ -126,3 +126,23 @@ a {
   aspect-ratio: 16 / 9;
   width: 100%;
 }
+
+*::-webkit-scrollbar-track {
+  width: 10px;
+  background: $primary-color-5;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $primary-color-20;
+  transition: all 0.2s ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #4a5158;
+  transition: all 0.2s ease-in-out;
+}

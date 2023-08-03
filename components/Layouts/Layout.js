@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
       {children}
       <Footer />
       <TabBar />
+      <div className={styles.heroFooter} />
     </div>
   );
 };

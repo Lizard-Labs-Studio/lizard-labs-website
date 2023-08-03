@@ -15,7 +15,7 @@ const HeroBlock = () => {
           </h2>
         </div>
 
-        <Button type="simple">Contact Us</Button>
+        <Button link='/contacts' type="simple">Contact Us</Button>
 
       </div>
     </div>

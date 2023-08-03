@@ -26,6 +26,18 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 68px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 48px;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 36px;
+      }
     }
 
     .subtitle {
@@ -36,6 +48,10 @@
       font-weight: 400;
       max-width: 520px;
       text-align: center;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 14px;
+      }
     }
   }
 }

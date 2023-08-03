@@ -35,6 +35,7 @@ const navigation = [
 
 const TabBar = () => {
   const router = useRouter();
+  // console.log(router.pathname);
   return (
     <nav className={styles.tabBar}>
       <ul className={styles.linkList}>

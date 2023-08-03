@@ -25,9 +25,8 @@ export default function Home() {
       <FAQ />
 
       <div className={styles.hero} />
+      
     </div>
   );
 }
-{
-  /* <Button type='simple'>Contact Us</Button> */
-}
+

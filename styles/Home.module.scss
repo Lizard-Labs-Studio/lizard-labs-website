@@ -1,3 +1,5 @@
+@import "./Constants.module.scss";
+
 .hero {
   position: absolute;
   width: 805px;
@@ -7,5 +9,14 @@
   background-size: cover;
   top: 0;
   left: 50%;
-  transform: translate(-32%,-27%);
+  transform: translate(-32%, -27%);
+  transition: 0.2s all ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 500px;
+    height: 500px;
+    transform: translate(-32%, 20%);
+  }
 }

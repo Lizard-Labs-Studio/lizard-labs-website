@@ -6,9 +6,9 @@
   gap: 10px;
   cursor: pointer;
   transition: 0.3s all ease-in-out;
-      -webkit-user-select: none; /* Safari */
-      -ms-user-select: none; /* IE 10 and IE 11 */
-      user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 
   .head {
     display: flex;
@@ -22,6 +22,10 @@
       font-weight: 500;
       color: $primary-color-90;
       margin: 0;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 16px;
+      }
     }
 
     .arrow {
@@ -46,6 +50,11 @@
       transition: 0.3s all ease-in-out;
       transition-delay: 0.1s;
       margin: 0 0 10px 0;
+      line-height: 140%;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -61,6 +70,11 @@
       font-size: 16px;
       font-weight: 400;
       color: $primary-color-60;
+      line-height: 140%;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 14px;
+      }
     }
   }
 }

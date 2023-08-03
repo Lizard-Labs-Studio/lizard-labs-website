@@ -1,7 +1,15 @@
+import Link from "next/link";
 import styles from "./Button.module.scss";
 import Image from "next/image";
 
-const Button = ({ children = "button", size, icon, type, fill }) => {
+const Button = ({
+  children = "button",
+  size,
+  icon,
+  type,
+  fill,
+  link = "#",
+}) => {
   const button = {
     height: size === "small" ? "32px" : "40px",
     padding: size === "small" ? "0 24px" : "0 36px",
@@ -19,19 +27,21 @@ const Button = ({ children = "button", size, icon, type, fill }) => {
   };
 
   return (
-    <div style={button} type="submit" className={styles.button}>
-      <p style={innerText} className={styles.buttonText}>
-        {children}
-      </p>
-      <span className={icon ? " " : styles.imageHide}>
-        <Image
-          src={`/icons/${icon}`}
-          alt="icon"
-          width={size === "small" ? "20" : "24"}
-          height={size === "small" ? "20" : "24"}
-        />
-      </span>
-    </div>
+    <Link href={link}>
+      <a style={button} className={styles.button}>
+        <p style={innerText} className={styles.buttonText}>
+          {children}
+        </p>
+        <span className={icon ? " " : styles.imageHide}>
+          <Image
+            src={`/icons/${icon}`}
+            alt="icon"
+            width={size === "small" ? "20" : "24"}
+            height={size === "small" ? "20" : "24"}
+          />
+        </span>
+      </a>
+    </Link>
   );
 };
 

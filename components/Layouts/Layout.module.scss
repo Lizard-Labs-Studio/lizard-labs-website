@@ -1,3 +1,27 @@
+@import "../../styles/Constants.module.scss";
+
 .layout {
   position: relative;
+  overflow: hidden;
+}
+
+.heroFooter {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: url("/assets/Hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: -60px;
+  left: 50%;
+  transform: translate(-15%, 0);
+  pointer-events: none;
+  z-index: 2;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 400px;
+    height: 400px;
+    bottom: 0;
+    transform: translate(-18%, 0);
+  }
 }
