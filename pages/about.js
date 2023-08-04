@@ -8,22 +8,36 @@ const about = () => {
       <div className={styles.circeBg2} />
       <div className={styles.circeBg3} />
 
-      <div className="container">
-        <div className={styles.about}>
-          {/* <div className={styles.heroBlock}>
+      <div className={styles.about}>
+        <div className={styles.heroBlock}>
           <div className={styles.titles}>
-            <h3 className={styles.title}>
-              <span className={styles.gradientText}>Explore</span> Us
-            </h3>
+            <div className={styles.titleWrapper}>
+              <div className={styles.titleMainWrapper}>
+                <h3 className={styles.titleMain}>
+                  <span className={styles.gradientText}>Explore</span> Us
+                </h3>
+              </div>
+
+              <div className={styles.scrollText}>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+                <h3 className={styles.scrollTitle}>About Us</h3>
+              </div>
+            </div>
+
             <h4 className={styles.subtitle}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
               sit amet nisi faucibus, pretium dui quis, tempus ex.{" "}
             </h4>
-
-            <div className={styles.shadow} />
           </div>
-        </div> */}
-
+        </div>
+        <div className="container">
           <div className={styles.strengthsBlock}>
             <div className={styles.titles}>
               <h3 className={styles.title}>
@@ -54,7 +68,7 @@ const about = () => {
           <div className={styles.teamBlock}>
             <div className={styles.titles}>
               <h3 className={styles.title}>
-                <span className={styles.gradientText}>Our </span> Strengths
+                <span className={styles.gradientText}>Studio </span> Team
               </h3>
               <h4 className={styles.subtitle}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris

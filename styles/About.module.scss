@@ -7,7 +7,7 @@
   z-index: 3;
 
   .heroBlock {
-    margin: 100px 0 300px 0;
+    margin: 240px 0 300px 0;
 
     // &:first-child::after {
     //   content: "";
@@ -29,19 +29,104 @@
     align-items: center;
     position: relative;
 
-    // .shadow {
-    //   position: absolute;
-    //   width: 30vw;
-    //   max-width: 380px;
-    //   height: 100px;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    //   background: $primary-color-5;
-    //   opacity: 0.4;
-    //   filter: blur(20px);
-    //   z-index: 1;
-    // }
+    .titleWrapper {
+      position: relative;
+      .titleMainWrapper {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .titleMain {
+          margin: 0;
+          position: relative;
+          z-index: 5;
+          font-family: "Roboto", sans-serif;
+          font-size: 80px;
+          line-height: 90%;
+          color: $primary-color-90;
+          white-space: nowrap;
+
+          .gradientText {
+            background: $text-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          @media (max-width: $breakpoint-laptop) {
+            font-size: 68px;
+          }
+
+          @media (max-width: $breakpoint-tablet) {
+            font-size: 48px;
+          }
+
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 36px;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 120%;
+          transform: translateX(-50%);
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            rgba(12, 13, 13, 0) 0%,
+            rgba(12, 13, 13, 1) 10%,
+            rgba(12, 13, 13, 1) 90%,
+            rgba(12, 13, 13, 0) 100%
+          );
+          z-index: 4;
+        }
+      }
+    }
+
+    .scrollText {
+      display: flex;
+      justify-content: flex-start;
+      overflow: hidden;
+      gap: 30px;
+      position: relative;
+      z-index: 1;
+      .scrollTitle {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-size: 80px;
+        line-height: 90%;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+        white-space: nowrap;
+
+        animation: move-rtl 6000ms linear infinite;
+
+        @media (max-width: $breakpoint-laptop) {
+          font-size: 68px;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 48px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 36px;
+        }
+      }
+
+      @keyframes move-rtl {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-100% - 30px));
+        }
+      }
+    }
 
     .title {
       margin: 0;
@@ -76,12 +161,13 @@
       margin: 0;
       font-family: "Inter", sans-serif;
       font-size: 16px;
-      color: $primary-color-70;
+      color: $primary-color-60;
       font-weight: 400;
       max-width: 520px;
       text-align: center;
       position: relative;
       z-index: 2;
+      letter-spacing: 0.02em;
 
       @media (max-width: $breakpoint-mobile) {
         font-size: 14px;
@@ -90,7 +176,7 @@
   }
 
   .strengthsBlock {
-    margin: 100px 0 200px 0;
+    margin: 0 0 200px 0;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -111,7 +197,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 10px;
 
         .line {
           width: 100%;

@@ -11,7 +11,7 @@ body {
   color: $primary-color-90;
   overflow-x: hidden;
   font-smooth: always;
-
+  
   &::after {
     content: "";
     width: 200vw;
