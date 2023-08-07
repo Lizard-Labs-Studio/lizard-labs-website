@@ -2,7 +2,6 @@ import styles from "./Reptarium.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const Reptarium = ({ reptariumTitle, reptariumSubtitle, ytVideoLink }) => {
-  console.log(ytVideoLink);
   return (
     <div className="container">
       <div className={styles.reptarium}>

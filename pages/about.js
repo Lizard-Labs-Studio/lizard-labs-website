@@ -4,6 +4,22 @@ import client from "../contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Head from "next/head";
+import { motion } from "framer-motion";
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: easing,
+    },
+  },
+};
 
 const about = ({ about, strengths, team }) => {
   const {
@@ -16,10 +32,13 @@ const about = ({ about, strengths, team }) => {
     teamSubtitle,
   } = about.fields;
 
-  console.log(strengthsImage.fields);
-
   return (
-    <div className="container-max">
+    <motion.div
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
+      variants={fadeInUp}
+      initial="initial"
+      animate="animate"
+      className="container-max">
       <Head>
         <title>Lizard Labs | About Us</title>
       </Head>
@@ -134,7 +153,7 @@ const about = ({ about, strengths, team }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -4,7 +4,6 @@ import styles from "./About.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const About = ({ aboutTitle, aboutSubtitle, aboutCards }) => {
-  console.log(aboutCards);
   return (
     <div className="container">
       <div className={styles.about}>

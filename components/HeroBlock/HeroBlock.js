@@ -3,8 +3,6 @@ import styles from "./HeroBlock.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const HeroBlock = ({ heroTitle, heroSubtitle }) => {
-  console.log(heroTitle);
-
   return (
     <div className="container">
       <div className={styles.heroBlock}>

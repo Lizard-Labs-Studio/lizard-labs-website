@@ -8,6 +8,22 @@ import About from "../components/About/About";
 import Reptarium from "../components/Reptarium/Reptarium";
 import FAQ from "../components/FAQ/FAQ";
 import client from "../contentful";
+import { motion } from "framer-motion";
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: easing,
+    },
+  },
+};
 
 export default function Home({ home, faq, aboutCards }) {
   const {
@@ -22,64 +38,68 @@ export default function Home({ home, faq, aboutCards }) {
     ytVideoLink,
   } = home.fields;
 
-  console.log(faq);
-
   return (
-    <div className="container-max">
-      <div className={styles.circeBg1} />
-      <div className={styles.circeBg2} />
-      <div className={styles.circeBg3} />
+    <motion.div
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
+      variants={fadeInUp}
+      initial="initial"
+      animate="animate">
+      <div className="container-max">
+        <div className={styles.circeBg1} />
+        <div className={styles.circeBg2} />
+        <div className={styles.circeBg3} />
 
-      <div className="container-global">
-        <Head>
-          <title>Lizard Labs | Home</title>
-        </Head>
+        <div className="container-global">
+          <Head>
+            <title>Lizard Labs | Home</title>
+          </Head>
 
-        <HeroBlock heroTitle={heroTitle} heroSubtitle={heroSubtitle} />
+          <HeroBlock heroTitle={heroTitle} heroSubtitle={heroSubtitle} />
 
-        <About
-          aboutTitle={aboutTitle}
-          aboutSubtitle={aboutSubtitle}
-          aboutCards={aboutCards}
-        />
+          <About
+            aboutTitle={aboutTitle}
+            aboutSubtitle={aboutSubtitle}
+            aboutCards={aboutCards}
+          />
 
-        <Reptarium
-          reptariumTitle={reptariumTitle}
-          reptariumSubtitle={reptariumSubtitle}
-          ytVideoLink={ytVideoLink}
-        />
+          <Reptarium
+            reptariumTitle={reptariumTitle}
+            reptariumSubtitle={reptariumSubtitle}
+            ytVideoLink={ytVideoLink}
+          />
 
-        <FAQ faqTitle={faqTitle} faqSubtitle={faqSubtitle} faq={faq} />
+          <FAQ faqTitle={faqTitle} faqSubtitle={faqSubtitle} faq={faq} />
 
-        <div className={styles.hero} />
-        <div className={styles.hero2} />
+          <div className={styles.hero} />
+          <div className={styles.hero2} />
 
-        <div className={styles.bgAnim}>
-          {/* <div className={styles.shadow}></div> */}
-          <div className={styles.saturnWrapper}>
-            <div className={styles.circle}></div>
-            <div className={styles.dot}>
-              <p>React.js & Next.js</p>
+          <div className={styles.bgAnim}>
+            {/* <div className={styles.shadow}></div> */}
+            <div className={styles.saturnWrapper}>
+              <div className={styles.circle}></div>
+              <div className={styles.dot}>
+                <p>React.js & Next.js</p>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.saturnWrapper}>
-            <div className={styles.circle}></div>
-            <div className={styles.dot}>
-              <p>UX/UI</p>
+            <div className={styles.saturnWrapper}>
+              <div className={styles.circle}></div>
+              <div className={styles.dot}>
+                <p>UX/UI</p>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.saturnWrapper}>
-            <div className={styles.circle}></div>
-            <div className={styles.dot}>
-              <p>Express.js</p>
+            <div className={styles.saturnWrapper}>
+              <div className={styles.circle}></div>
+              <div className={styles.dot}>
+                <p>Express.js</p>
+              </div>
             </div>
+            <div className={styles.saturn}></div>
           </div>
-          <div className={styles.saturn}></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

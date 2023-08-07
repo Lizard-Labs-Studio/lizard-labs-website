@@ -5,6 +5,22 @@ import { toast } from "react-toastify";
 import client from "../contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Head from "next/head";
+import { motion } from "framer-motion";
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      ease: easing,
+    },
+  },
+};
 
 const Contacts = ({ contacts, socials }) => {
   const form = useRef();
@@ -76,7 +92,12 @@ const Contacts = ({ contacts, socials }) => {
   };
 
   return (
-    <div className="container">
+    <motion.div
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
+      variants={fadeInUp}
+      initial="initial"
+      animate="animate"
+      className="container">
       <Head>
         <title>Lizard Labs | Contact Us</title>
       </Head>
@@ -181,7 +202,7 @@ const Contacts = ({ contacts, socials }) => {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
