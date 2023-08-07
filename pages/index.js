@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import Navbar from "../components/Navbar/Navbar";
-import Button from "../components/Button/Button";
 import HeroBlock from "../components/HeroBlock/HeroBlock";
 import About from "../components/About/About";
 import Reptarium from "../components/Reptarium/Reptarium";
@@ -70,8 +68,22 @@ export default function Home({ home, faq, aboutCards }) {
 
           <FAQ faqTitle={faqTitle} faqSubtitle={faqSubtitle} faq={faq} />
 
-          <div className={styles.hero} />
-          <div className={styles.hero2} />
+          <div className={styles.hero}>
+            <Image
+              alt="hero"
+              objectFit="cover"
+              layout="fill"
+              src="/assets/hero.png"
+            />
+          </div>
+          <div className={styles.hero2}>
+            <Image
+              alt="hero"
+              objectFit="cover"
+              layout="fill"
+              src="/assets/hero2.png"
+            />
+          </div>
 
           <div className={styles.bgAnim}>
             {/* <div className={styles.shadow}></div> */}
