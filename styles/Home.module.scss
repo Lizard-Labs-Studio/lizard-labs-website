@@ -319,7 +319,7 @@
   z-index: 2;
 
   @media (max-width: $breakpoint-mobile) {
-    top: 460px;
+    top: 360px;
     left: 50%;
     transform: translateX(-90%);
   }
@@ -358,7 +358,7 @@
   z-index: 2;
 
   @media (max-width: $breakpoint-mobile) {
-    transform: translate(100%, -50%);
+    transform: translate(150%, -50%);
     width: 400px;
     height: 400px;
   }

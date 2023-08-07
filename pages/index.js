@@ -7,8 +7,23 @@ import HeroBlock from "../components/HeroBlock/HeroBlock";
 import About from "../components/About/About";
 import Reptarium from "../components/Reptarium/Reptarium";
 import FAQ from "../components/FAQ/FAQ";
+import client from "../contentful";
 
-export default function Home() {
+export default function Home({ home, faq, aboutCards }) {
+  const {
+    heroTitle,
+    heroSubtitle,
+    aboutTitle,
+    aboutSubtitle,
+    reptariumTitle,
+    reptariumSubtitle,
+    faqTitle,
+    faqSubtitle,
+    ytVideoLink,
+  } = home.fields;
+
+  console.log(faq);
+
   return (
     <div className="container-max">
       <div className={styles.circeBg1} />
@@ -17,17 +32,24 @@ export default function Home() {
 
       <div className="container-global">
         <Head>
-          <title>Lizard Labs</title>
-          <link rel="icon" href="/favicon.ico" />
+          <title>Lizard Labs | Home</title>
         </Head>
 
-        <HeroBlock />
+        <HeroBlock heroTitle={heroTitle} heroSubtitle={heroSubtitle} />
 
-        <About />
+        <About
+          aboutTitle={aboutTitle}
+          aboutSubtitle={aboutSubtitle}
+          aboutCards={aboutCards}
+        />
 
-        <Reptarium />
+        <Reptarium
+          reptariumTitle={reptariumTitle}
+          reptariumSubtitle={reptariumSubtitle}
+          ytVideoLink={ytVideoLink}
+        />
 
-        <FAQ />
+        <FAQ faqTitle={faqTitle} faqSubtitle={faqSubtitle} faq={faq} />
 
         <div className={styles.hero} />
         <div className={styles.hero2} />
@@ -60,3 +82,28 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const home = await client.getEntries({
+    content_type: "homePage",
+    limit: 1,
+  });
+
+  const faq = await client.getEntries({
+    content_type: "faqList",
+  });
+
+  const aboutCards = await client.getEntries({
+    content_type: "homePageAboutCards",
+  });
+
+  const [homePage] = home.items;
+
+  return {
+    props: {
+      home: homePage,
+      faq: faq.items,
+      aboutCards: aboutCards.items,
+    },
+  };
+};

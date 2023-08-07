@@ -19,7 +19,7 @@
       font-size: 80px;
       line-height: 90%;
       color: $primary-color-90;
-      white-space: nowrap;
+      max-width: 500px;
 
       .gradientText {
         background: $text-gradient;
@@ -29,14 +29,17 @@
 
       @media (max-width: $breakpoint-laptop) {
         font-size: 68px;
+        max-width: 400px;
       }
 
       @media (max-width: $breakpoint-tablet) {
         font-size: 48px;
+        max-width: 400px;
       }
 
       @media (max-width: $breakpoint-mobile) {
         font-size: 36px;
+        max-width: 300px;
       }
     }
 
@@ -46,6 +49,10 @@
       font-size: 16px;
       color: $primary-color-60;
       font-weight: 400;
+
+      p {
+        margin: 0;
+      }
 
       @media (max-width: $breakpoint-mobile) {
         font-size: 14px;

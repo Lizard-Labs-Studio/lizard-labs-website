@@ -29,7 +29,7 @@ const navigation = [
   },
 ];
 
-const socials = [
+const socials2 = [
   {
     id: 1,
     title: "Instagram",
@@ -97,7 +97,7 @@ const Footer = () => {
             <div className={styles.linkBlock}>
               <h3 className={styles.linkBlockTitle}>Socials</h3>
               <ul className={styles.linkList}>
-                {socials.map((link) => (
+                {socials2.map((link) => (
                   <li key={link.id}>
                     <Link href={link.path + link.secondPath}>
                       <a>

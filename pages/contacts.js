@@ -1,15 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "../styles/Contacts.module.scss";
 import { toast } from "react-toastify";
+import client from "../contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Head from "next/head";
 
-const Contacts = () => {
+const Contacts = ({ contacts, socials }) => {
   const form = useRef();
   const [formInfo, setFormInfo] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const { heroTitle, heroSubtitle, email } = contacts.fields;
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -72,14 +77,20 @@ const Contacts = () => {
 
   return (
     <div className="container">
+      <Head>
+        <title>Lizard Labs | Contact Us</title>
+      </Head>
+
       <div className={styles.contacts}>
         <div className={styles.titles}>
           <h3 className={styles.title}>
-            <span className={styles.gradientText}>Contact </span> Us
+            <span className={styles.gradientText}>
+              {heroTitle.split(" ")[0]}{" "}
+            </span>{" "}
+            {heroTitle.split(" ").slice(1).join(" ")}
           </h3>
           <h4 className={styles.subtitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit
-            amet nisi faucibus, pretium dui quis, tempus ex.{" "}
+            {documentToReactComponents(heroSubtitle)}
           </h4>
         </div>
 
@@ -105,7 +116,6 @@ const Contacts = () => {
 
                   <label className={styles.label}>Name</label>
                 </div>
-                {/* <p className={styles.errorMsg}>Error</p> */}
               </div>
               <div className={styles.textFieldWrapper}>
                 <div className={styles.textFieldBody}>
@@ -123,8 +133,6 @@ const Contacts = () => {
 
                   <label className={styles.label}>Email</label>
                 </div>
-
-                {/* <p className={styles.errorMsg}>Error</p> */}
               </div>
             </div>
             <div className={styles.textFieldWrapper}>
@@ -143,8 +151,6 @@ const Contacts = () => {
 
                 <label className={styles.labelTop}>Message</label>
               </div>
-
-              {/* <p className={styles.errorMsg}>Error</p> */}
             </div>
           </div>
 
@@ -153,15 +159,21 @@ const Contacts = () => {
               <div className={styles.socialsBlock}>
                 <div className={styles.socialTitle}>Follow</div>
                 <div className={styles.socialLinks}>
-                  <div className={styles.facebookIcon} />
-                  <div className={styles.instagramIcon} />
-                  <div className={styles.linkedinIcon} />
+                  {socials.items.map((social) => (
+                    <div
+                      key={social.fields.slug}
+                      className={styles.facebookIcon}
+                      style={{
+                        backgroundImage: `url(${social.fields.icon.fields.file.url})`,
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
 
               <div className={styles.mailBlock}>
                 <div className={styles.mailTitle}>Write</div>
-                <p className={styles.mail}>lizardlab@gmail.com</p>
+                <p className={styles.mail}>{email}</p>
               </div>
             </div>
 
@@ -174,3 +186,23 @@ const Contacts = () => {
 };
 
 export default Contacts;
+
+export const getServerSideProps = async () => {
+  const contacts = await client.getEntries({
+    content_type: "contactsPage",
+    limit: 1,
+  });
+
+  const socials = await client.getEntries({
+    content_type: "socialsList",
+  });
+
+  const [contactsPage] = contacts.items;
+
+  return {
+    props: {
+      contacts: contactsPage,
+      socials,
+    },
+  };
+};

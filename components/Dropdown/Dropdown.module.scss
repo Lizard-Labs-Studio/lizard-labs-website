@@ -1,5 +1,22 @@
 @import "../../styles/Constants.module.scss";
 
+.dropdownWrapper {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .line {
+    width: 100%;
+    height: 0.5px;
+    background: $primary-color-20;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 100%;
+  }
+}
+
 .dropdownBranch {
   display: flex;
   flex-direction: column;
@@ -39,7 +56,8 @@
     max-height: 0;
     overflow: hidden;
     transition: 0.3s all cubic-bezier(0, 1, 0, 1);
-    .answer {
+
+    p {
       font-size: 16px;
       font-weight: 400;
       color: $primary-color-5;
@@ -61,7 +79,7 @@
     overflow: hidden;
     transition: 0.3s all cubic-bezier(1, 0, 1, 0);
 
-    .answer {
+    p {
       margin: 0 0 10px 0;
       font-size: 16px;
       font-weight: 400;

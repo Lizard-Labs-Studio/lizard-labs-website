@@ -1,5 +1,6 @@
 import Dropdown from "../Dropdown/Dropdown";
 import styles from "./FAQ.module.scss";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const myData = {
   id: 1,
@@ -7,28 +8,38 @@ const myData = {
   text: "Text",
 };
 
-const FAQ = () => {
+const FAQ = ({ faqTitle, faqSubtitle, faq }) => {
   return (
     <div className="container">
       <div className={styles.faq}>
         <div className={styles.titles}>
           <h3 className={styles.title}>
-            <span className={styles.gradientText}>FAQ</span>
+            <span className={styles.gradientText}>
+              {faqTitle.split(" ")[0]}
+            </span>{" "}
+            {faqTitle.split(" ").slice(1).join(" ")}
           </h3>
           <h4 className={styles.subtitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit
-            amet nisi faucibus, pretium dui quis, tempus ex.
+            {documentToReactComponents(faqSubtitle)}
           </h4>
         </div>
 
         <div className={styles.dropdownWrapper}>
-          <Dropdown myData />
+          {faq.map((faqItem, index) => (
+            <Dropdown
+              faqItem={faqItem}
+              length={faq.length}
+              key={faqItem.fields.slug}
+              index={index}
+            />
+          ))}
+          {/* <Dropdown myData />
           <div className={styles.line} />
           <Dropdown myData />
           <div className={styles.line} />
           <Dropdown myData />
           <div className={styles.line} />
-          <Dropdown myData />
+          <Dropdown myData /> */}
         </div>
       </div>
     </div>

@@ -169,6 +169,10 @@
       z-index: 2;
       letter-spacing: 0.02em;
 
+      p {
+        margin: 0;
+      }
+
       @media (max-width: $breakpoint-mobile) {
         font-size: 14px;
       }
@@ -180,6 +184,8 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    position: relative;
+    z-index: 7;
 
     .strengthsListWrapper {
       display: flex;
@@ -188,16 +194,22 @@
 
       .strengthsImage {
         min-width: 300px;
+
         height: 300px;
         background: #202020;
         border-radius: 12px;
+        position: relative;
+
+        img {
+          border-radius: 12px;
+        }
       }
 
       .strengthsList {
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
 
         .line {
           width: 100%;
@@ -223,6 +235,7 @@
       // grid-template-rows: repeat(2, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 20px;
+      // position: relative;
 
       .card {
         display: flex;
@@ -234,6 +247,14 @@
           aspect-ratio: 1 / 1;
           background: #202020;
           border-radius: 12px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: relative;
+
+          img {
+            border-radius: 12px;
+          }
         }
 
         .cardinfo {
@@ -273,7 +294,7 @@
   background: #60497b;
   opacity: 18%;
   filter: blur(100px);
-  z-index: 2;
+  z-index: 6;
   animation: circle1 3.5s infinite;
 
   @media (max-width: $breakpoint-mobile) {
