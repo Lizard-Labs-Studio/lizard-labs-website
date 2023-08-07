@@ -42,7 +42,7 @@ const About = ({ aboutTitle, aboutSubtitle, aboutCards }) => {
           </div>
         </div>
 
-        <Button type="simple">Read More</Button>
+        <Button link="/about" type="simple">Read More</Button>
       </div>
     </div>
   );

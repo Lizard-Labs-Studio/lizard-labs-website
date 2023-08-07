@@ -137,6 +137,10 @@ a {
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
 }
 
 *::-webkit-scrollbar-track {
@@ -158,3 +162,4 @@ a {
   background: #4a5158;
   transition: all 0.2s ease-in-out;
 }
+

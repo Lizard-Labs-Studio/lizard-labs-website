@@ -7,6 +7,18 @@
   gap: 40px;
   margin: 0 0 200px 0;
 
+  .youtubeVideoWrapper {
+    width: 100%;
+
+    .youtubeVideo {
+      position: relative;
+      padding-bottom: 56.15%;
+      height: 0;
+      overflow: hidden;
+    }
+
+  }
+
   .titles {
     display: flex;
     flex-direction: column;
