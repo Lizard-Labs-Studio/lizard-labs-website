@@ -62,7 +62,15 @@ const Footer = () => {
       <div className="container">
         <div className={styles.head}>
           <div className={styles.logoWrapper}>
-            <h1 className={styles.logo}>LIZARD LABS</h1>
+            <h1 className={styles.logo}>
+              <Image
+                src="/LizardLabsLogo.svg"
+                alt="Lizard Labs Logo"
+                width={40}
+                height={40}
+              />
+              LIZARD LABS
+            </h1>
             <p className={styles.logoDescription}>
               Let’s make something great togather
             </p>

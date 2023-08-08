@@ -51,7 +51,8 @@
         font-weight: bold;
         font-size: 18px;
         color: $primary-color-95;
-        cursor: pointer;
+        display: flex;
+        align-items: center;
       }
       .logoDescription {
         font-size: 14px;

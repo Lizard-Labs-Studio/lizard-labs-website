@@ -9,7 +9,7 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background-image: url("/assets/Hero.png");
+  // background-image: url("/assets/Hero.png");
   background-repeat: no-repeat;
   background-size: cover;
   bottom: -60px;
@@ -17,6 +17,13 @@
   transform: translate(-15%, 0);
   pointer-events: none;
   z-index: 2;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 400px;
+    height: 400px;
+    bottom: 0;
+    transform: translate(10%, 0);
+  }
 
   @media (max-width: $breakpoint-mobile) {
     width: 400px;

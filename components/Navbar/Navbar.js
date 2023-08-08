@@ -43,7 +43,15 @@ const Navbar = () => {
     <div className={styles.navbarWrapper}>
       <div className="container">
         <nav className={styles.navbar}>
-          <h1 className={styles.logo}>LIZARD LABS</h1>
+          <h1 className={styles.logo}>
+            <Image
+              src="/LizardLabsLogo.svg"
+              alt="Lizard Labs Logo"
+              width={40}
+              height={40}
+            />
+            LIZARD LABS
+          </h1>
 
           <div className={styles.navbarRightPart}>
             <ul className={styles.linkList}>

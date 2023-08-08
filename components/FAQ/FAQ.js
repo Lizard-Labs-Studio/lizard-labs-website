@@ -2,12 +2,6 @@ import Dropdown from "../Dropdown/Dropdown";
 import styles from "./FAQ.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const myData = {
-  id: 1,
-  title: "Title",
-  text: "Text",
-};
-
 const FAQ = ({ faqTitle, faqSubtitle, faq }) => {
   return (
     <div className="container">

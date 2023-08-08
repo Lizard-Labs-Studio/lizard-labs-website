@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import TabBar from "../TabBar/TabBar";
@@ -10,7 +11,14 @@ const Layout = ({ children }) => {
       {children}
       <Footer />
       <TabBar />
-      <div className={styles.heroFooter} />
+      <div className={styles.heroFooter}>
+        <Image
+          alt="hero"
+          objectFit="cover"
+          layout="fill"
+          src="/assets/hero.png"
+        />
+      </div>
     </div>
   );
 };
