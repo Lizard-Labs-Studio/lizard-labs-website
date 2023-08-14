@@ -90,21 +90,21 @@ export default function Home({ home, faq, aboutCards }) {
             <div className={styles.saturnWrapper}>
               <div className={styles.circle}></div>
               <div className={styles.dot}>
-                <p>React.js & Next.js</p>
+                <p>Web3</p>
               </div>
             </div>
 
             <div className={styles.saturnWrapper}>
               <div className={styles.circle}></div>
               <div className={styles.dot}>
-                <p>UX/UI</p>
+                <p>Web2</p>
               </div>
             </div>
 
             <div className={styles.saturnWrapper}>
               <div className={styles.circle}></div>
               <div className={styles.dot}>
-                <p>Express.js</p>
+                <p>Consensus</p>
               </div>
             </div>
             <div className={styles.saturn}></div>
